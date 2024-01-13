@@ -31,6 +31,7 @@ function adicionandoAtividade (texto){
 
     //criando uma lista/atividade
     let atividade = document.createElement('li')
+    atividade.classList.add('list_style')
     atividade.innerText = texto;
 
     //criando botao de delete
@@ -47,12 +48,16 @@ function adicionandoAtividade (texto){
     
 }
 
-// removendo a atividade
+// removendo a atividade e adicionando efeito de riscado na atividade feita
 document.addEventListener('click',(evento) =>{
     const targetEvent = evento.target;
     const parentEvent = targetEvent.closest('div');
     if (targetEvent.classList.contains('deleteBtn')){
         parentEvent.remove();
+    }
+
+    if (targetEvent.classList.contains('list_style')){
+        targetEvent.classList.toggle('checked');
     }
 })
 
