@@ -45,6 +45,8 @@ function adicionandoAtividade (texto){
 
     // Inserindo div como filha do container para aparecer na pagina
     atividades_container.appendChild(divTodo);
+
+    salvarDados();
     
 }
 
@@ -52,14 +54,24 @@ function adicionandoAtividade (texto){
 document.addEventListener('click',(evento) =>{
     const targetEvent = evento.target;
     const parentEvent = targetEvent.closest('div');
+    // Deletando atividade
     if (targetEvent.classList.contains('deleteBtn')){
         parentEvent.remove();
+        salvarDados();
     }
-
+    //riscando atividade
     if (targetEvent.classList.contains('list_style')){
         targetEvent.classList.toggle('checked');
+        salvarDados();
     }
 })
 
+function salvarDados (){
+    localStorage.setItem('dados', atividades_container.innerHTML);
+};
 
+function mostraDadosSalvos(){
+    atividades_container.innerHTML = localStorage.getItem('dados');
+}
+mostraDadosSalvos();
 
