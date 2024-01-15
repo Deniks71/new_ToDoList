@@ -16,9 +16,7 @@ input.addEventListener('keyup',(e)=>{
     if(e.key === 'Enter' && !input.value.trim() == ""){
         adicionandoAtividade(input.value);
         input.value =""
-    } else if (input.value.trim() == ""){
-        alert('Digite algo');
-    }
+    } 
 
 })
 //Evento de clicar no botao para inserir atividade na lista
