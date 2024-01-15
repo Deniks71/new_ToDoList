@@ -11,6 +11,14 @@ let atividades_container = document.querySelector('.lista_atividades');
 
 
 
+//inserindo evento de inserir atividade ao apertar enter
+input.addEventListener('keyup',(e)=>{
+    if(e.key === 'Enter' && !input.value.trim() == ""){
+        adicionandoAtividade(input.value);
+        input.value =""
+    }
+
+})
 //Evento de clicar no botao para inserir atividade na lista
 addBtn.addEventListener('click', () => {
     if (input.value.trim() == ""){
