@@ -28,6 +28,7 @@ addBtn.addEventListener('click', () => {
 function adicionandoAtividade (texto){
     //criando a div para depois inserir a lista/atividade e o botao
     let divTodo = document.createElement('div');
+    divTodo.classList.add('div_list')
 
     //criando uma lista/atividade
     let atividade = document.createElement('li')
@@ -36,7 +37,8 @@ function adicionandoAtividade (texto){
 
     //criando botao de delete
     let deleteBtn = document.createElement('button');
-    deleteBtn.classList.add('deleteBtn')
+    deleteBtn.classList.add('deleteBtn');
+    deleteBtn.classList.add('btn');
     deleteBtn.innerText = 'Delete';
 
     //colocando atividade e delete button como filhos da div;
